@@ -1,0 +1,50 @@
+[
+  {
+    "id": "D-01",
+    "profile": {
+      "name": "Bella",
+      "species": "Dog",
+      "breed": "Labrador Retriever",
+      "gender": "Female",
+      "age": "3 years",
+      "cage_location": "Kennel A-12",
+      "photo": "https://placedog.net/300/300?id=1"
+    },
+    "permanent_data": {
+      "chronic_conditions": ["Mild hip dysplasia"],
+      "cautions": ["Food aggressive with other dogs"]
+    }
+  },
+  {
+    "id": "C-03",
+    "profile": {
+      "name": "Luna",
+      "species": "Cat",
+      "breed": "Domestic Shorthair",
+      "gender": "Female",
+      "age": "6 months",
+      "cage_location": "Cattery B-05",
+      "photo": "https://placekitten.com/300/300"
+    },
+    "permanent_data": {
+      "chronic_conditions": [],
+      "cautions": ["Slightly skittish towards tall men"]
+    }
+  },
+  {
+    "id": "R-01",
+    "profile": {
+      "name": "Thumper",
+      "species": "Rabbit",
+      "breed": "Holland Lop",
+      "gender": "Male",
+      "age": "2 years",
+      "cage_location": "Small Animal Room 2",
+      "photo": null
+    },
+    "permanent_data": {
+      "chronic_conditions": ["Prone to ear mites"],
+      "cautions": ["Fragile spine - handle with care"]
+    }
+  }
+]

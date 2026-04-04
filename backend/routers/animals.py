@@ -1,27 +1,38 @@
 from fastapi import APIRouter, HTTPException
-from db.database import read_db, write_db
+from typing import List
+from db.database import read_animals, read_temporary_data, write_temporary_data
+from schemas import Animal, AnimalDetailResponse, TemporaryDataEntry
 
 router = APIRouter(prefix="/api/animals", tags=["animals"])
 
-@router.get("")
+@router.get("", response_model=List[Animal])
 def get_animals():
-    # BE-1.2: Fetch all animals from the database
-    db = read_db()
-    return db.get("animals", [])
+    # BE-1.2: Fetch all animals (Profile + Permanent Data)
+    return read_animals()
 
-@router.get("/{animal_id}")
+@router.get("/{animal_id}", response_model=AnimalDetailResponse)
 def get_animal(animal_id: str):
-    # BE-1.5: Fetch a specific animal by ID
-    db = read_db()
-    for animal in db.get("animals", []):
-        if animal["id"] == animal_id:
-            return animal
-    raise HTTPException(status_code=404, detail="Animal not found")
+    # BE-1.5: Fetch a specific animal and attach its temporary data
+    animals = read_animals()
+    animal = next((a for a in animals if a["id"] == animal_id), None)
+    
+    if not animal:
+        raise HTTPException(status_code=404, detail="Animal not found")
+        
+    temp_data = read_temporary_data()
+    animal_temp_data = [t for t in temp_data if t.get("animal_id") == animal_id]
+    
+    return {**animal, "temporary_data": animal_temp_data}
 
 @router.post("/{animal_id}/update")
-async def update_animal(animal_id: str, payload: dict):
-    # TODO: BE-5 - Receive finally approved Draft data and save the animal's timeline and status to the DB
-    db = read_db()
-    # ... update logic here ...
-    # write_db(db)
-    return {"status": "success", "message": f"Animal {animal_id} updated successfully."}
+async def update_animal(animal_id: str, payload: TemporaryDataEntry):
+    # BE-5: Append new temporary data entry safely
+    animals = read_animals()
+    if not any(a["id"] == animal_id for a in animals):
+        raise HTTPException(status_code=404, detail="Animal not found")
+        
+    temp_data = read_temporary_data()
+    temp_data.append(payload.dict())
+    write_temporary_data(temp_data)
+    
+    return {"status": "success", "message": f"Temporary data for animal {animal_id} updated successfully."}

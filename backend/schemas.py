@@ -17,26 +17,35 @@ class ExtractedData(BaseModel):
     cautions: List[str] = []
 
 
-class TimelineEntry(BaseModel):
+class TemporaryDataEntry(BaseModel):
     entry_id: str
+    animal_id: str
     timestamp: str
     recorded_by: str
     transcript: str
     extracted_data: ExtractedData
 
 
-class Animal(BaseModel):
-    id: str
+class AnimalProfile(BaseModel):
     name: str
     species: str
     breed: str
-    sex: str
-    estimated_age: str
-    status: str
-    intake_date: str
-    rescue_location: str
+    gender: str
+    age: str
+    cage_location: str
     photo: Optional[str] = None
-    current_summary: str
-    active_cautions: List[str] = []
-    active_action_items: List[str] = []
-    timeline: List[TimelineEntry] = []
+
+
+class PermanentData(BaseModel):
+    chronic_conditions: List[str] = []
+    cautions: List[str] = []
+
+
+class Animal(BaseModel):
+    id: str
+    profile: AnimalProfile
+    permanent_data: PermanentData
+
+
+class AnimalDetailResponse(Animal):
+    temporary_data: List[TemporaryDataEntry] = []
