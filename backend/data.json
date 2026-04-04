@@ -1,0 +1,43 @@
+{
+  "animals": [
+    {
+      "id": "B-12",
+      "name": "Marmalade",
+      "species": "Cat",
+      "breed": "Orange Tabby",
+      "sex": "Male",
+      "estimated_age": "2 years",
+      "status": "active",
+      "intake_date": "2026-03-15",
+      "rescue_location": "Kitsilano, 4th Ave",
+      "photo": null,
+      "current_summary": "New intake. Right front paw wound needs vet attention. Very skittish - handle with care.",
+      "active_cautions": [
+        "Right front paw wound - possible infection",
+        "Skittish - approach slowly, no sudden movements"
+      ],
+      "active_action_items": [
+        "Book vet appointment"
+      ],
+      "timeline": [
+        {
+          "entry_id": "entry-001",
+          "timestamp": "2026-03-15T09:30:00",
+          "recorded_by": "Maria",
+          "transcript": "",
+          "extracted_data": {
+            "health": ["Right front paw wound, possible infection"],
+            "behavior": ["Skittish", "Hissed when picked up"],
+            "feeding": {
+              "food": "Ate kibble",
+              "water": "None"
+            },
+            "medications": [],
+            "action_items": ["Book vet appointment"],
+            "cautions": ["Handle with care - skittish"]
+          }
+        }
+      ]
+    }
+  ]
+}
