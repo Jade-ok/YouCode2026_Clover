@@ -1,3 +1,4 @@
+# Pydantic models for data validation (Frontend <-> Backend <-> AI)
 from pydantic import BaseModel
 from typing import List, Optional
 

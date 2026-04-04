@@ -1,8 +1,8 @@
-from fastapi import FastAPI, HTTPException
+# BE-1: FastAPI App initialization and router registration
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from database import read_db
-from schemas import Animal
+from routers import animals, analyze
 
 app = FastAPI(title="EchoSource API")
 
@@ -13,22 +13,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.include_router(animals.router)
+app.include_router(analyze.router)
+
 
 @app.get("/")
 def health_check():
+    # API Health check endpoint
     return {"status": "ok", "message": "EchoSource API is running"}
-
-
-@app.get("/api/animals")
-def get_animals():
-    db = read_db()
-    return db.get("animals", [])
-
-
-@app.get("/api/animals/{animal_id}")
-def get_animal(animal_id: str):
-    db = read_db()
-    for animal in db.get("animals", []):
-        if animal["id"] == animal_id:
-            return animal
-    raise HTTPException(status_code=404, detail="Animal not found")
