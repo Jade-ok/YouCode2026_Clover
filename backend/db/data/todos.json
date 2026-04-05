@@ -341,6 +341,16 @@
         "id": "todo-C09-5",
         "task": "Monitor for any signs of limping",
         "is_completed": false
+      },
+      {
+        "id": "07a3ce20-0bd4-4b5f-80aa-1de343ef4125",
+        "task": "Monitor eating habits, litter box use, and activity level.",
+        "is_completed": false
+      },
+      {
+        "id": "0635b904-a426-46ef-84d5-d772245ad56f",
+        "task": "Regular grooming and checking for any skin or coat issues.",
+        "is_completed": false
       }
     ]
   }
