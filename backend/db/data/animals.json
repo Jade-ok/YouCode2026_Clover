@@ -17,11 +17,9 @@
       ],
       "cautions": [
         "Food aggressive with other dogs",
-        "Growled while eating - handle with caution around food",
-        "Dog is showing signs of low energy and lethargy.",
-        "Dog is not eating as much as before and occasionally refuses food.",
-        "Dog appears to be in discomfort, especially when moving and standing up.",
-        "Bella did not drink water at all today."
+        "Showing signs of low energy and lethargy.",
+        "Discomfort when moving and standing up.",
+        "Did not drink water at all today."
       ]
     }
   },
@@ -163,8 +161,8 @@
       ],
       "cautions": [
         "Avoid high stress situations",
-        "Dog may show signs of anxiety if left alone for longer periods.",
-        "Socialization with other dogs should be introduced gradually."
+        "Has separation anxiety.",
+        "Socialization with other dogs should be gradual."
       ]
     }
   },
@@ -183,7 +181,7 @@
       "intake_date": "2026-03-23",
       "chronic_conditions": [],
       "cautions": [
-        "Flight risk - strictly keep doors closed"
+        "Flight risk - strictly keep doors closed!"
       ]
     }
   },
@@ -205,7 +203,7 @@
       ],
       "cautions": [
         "Skittish - approach slowly, no sudden movements",
-        "The cat may be sensitive to sudden change, so calm and stable environment is important."
+        "Sensitive to sudden change -> needs calm environment."
       ]
     }
   }

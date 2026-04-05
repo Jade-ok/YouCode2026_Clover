@@ -3,16 +3,6 @@
     "animal_id": "D-01",
     "todos": [
       {
-        "id": "todo-D01-1",
-        "task": "Check hind legs in the afternoon",
-        "is_completed": false
-      },
-      {
-        "id": "todo-D01-2",
-        "task": "Schedule dental cleaning",
-        "is_completed": true
-      },
-      {
         "id": "todo-D01-3",
         "task": "Give joint supplement with dinner",
         "is_completed": false
@@ -23,33 +13,13 @@
         "is_completed": true
       },
       {
-        "id": "todo-D01-5",
-        "task": "Monitor food aggression during feeding time",
-        "is_completed": false
-      },
-      {
         "id": "cde89042-9ef1-4a63-be26-891fa9f7016b",
         "task": "Schedule x-ray for left hind leg",
         "is_completed": false
       },
       {
-        "id": "9f9b806d-9476-4d6a-a241-26c2f890010c",
-        "task": "Monitor food aggression",
-        "is_completed": false
-      },
-      {
         "id": "1cb0da81-8d0b-47db-9e2f-27b6b1b53a3a",
-        "task": "Take the dog to the vet tomorrow at 6 p.m.",
-        "is_completed": false
-      },
-      {
-        "id": "d2dae08e-ee9c-41dd-b399-1efd96eea5d0",
-        "task": "Monitor the dog's diet during the next shift",
-        "is_completed": false
-      },
-      {
-        "id": "80287688-5f31-4497-9cd6-447063d499ac",
-        "task": "Schedule vet checkup for the dog due to concerning symptoms.",
+        "task": "Take to the vet tomorrow at 6 p.m.",
         "is_completed": false
       }
     ]
@@ -68,18 +38,13 @@
         "is_completed": false
       },
       {
-        "id": "todo-C03-3",
-        "task": "Weigh and record in the log",
-        "is_completed": false
-      },
-      {
         "id": "todo-C03-4",
-        "task": "Socialization time: 15 mins of wand play",
+        "task": "Socialization play - 15 min",
         "is_completed": true
       },
       {
         "id": "todo-C03-5",
-        "task": "Check ears for any signs of mites",
+        "task": "Check ears for mites",
         "is_completed": false
       }
     ]
@@ -94,18 +59,8 @@
       },
       {
         "id": "todo-R01-2",
-        "task": "Refill Timothy hay rack",
+        "task": "Refill hay rack",
         "is_completed": true
-      },
-      {
-        "id": "todo-R01-3",
-        "task": "Provide fresh romaine lettuce",
-        "is_completed": false
-      },
-      {
-        "id": "todo-R01-4",
-        "task": "Check front teeth length",
-        "is_completed": false
       },
       {
         "id": "todo-R01-5",
@@ -119,28 +74,23 @@
     "todos": [
       {
         "id": "todo-D04-1",
-        "task": "Administer arthritis pain medication",
+        "task": "Give arthritis medication",
         "is_completed": false
       },
       {
         "id": "todo-D04-2",
-        "task": "Short, slow walk (max 15 mins)",
+        "task": "Slow walk - 15 min max",
         "is_completed": true
       },
       {
         "id": "todo-D04-3",
-        "task": "Brush thick shedding coat",
+        "task": "Brush coat",
         "is_completed": false
       },
       {
         "id": "todo-D04-4",
         "task": "Check ears for redness",
         "is_completed": true
-      },
-      {
-        "id": "todo-D04-5",
-        "task": "Fill water bowl - he drinks a lot",
-        "is_completed": false
       }
     ]
   },
@@ -150,27 +100,17 @@
       {
         "id": "todo-C05-1",
         "task": "Double check cage latch is fully locked",
-        "is_completed": false
-      },
-      {
-        "id": "todo-C05-2",
-        "task": "Interactive play to reduce vocalization",
         "is_completed": true
       },
       {
         "id": "todo-C05-3",
-        "task": "Provide hairball remedy paste",
+        "task": "Give hairball remedy paste",
         "is_completed": false
       },
       {
         "id": "todo-C05-4",
-        "task": "Refresh water fountain",
+        "task": "Clean water fountain",
         "is_completed": false
-      },
-      {
-        "id": "todo-C05-5",
-        "task": "Check if she ate her dry kibble",
-        "is_completed": true
       }
     ]
   },
@@ -178,24 +118,14 @@
     "animal_id": "D-06",
     "todos": [
       {
-        "id": "todo-D06-1",
-        "task": "Clean facial wrinkles with wipes",
-        "is_completed": false
-      },
-      {
         "id": "todo-D06-2",
-        "task": "Apply soothing balm to skin folds",
-        "is_completed": false
-      },
-      {
-        "id": "todo-D06-3",
-        "task": "Keep in air-conditioned room only",
+        "task": "Apply balm to skin folds",
         "is_completed": true
       },
       {
         "id": "todo-D06-4",
         "task": "Short potty break in the shade",
-        "is_completed": true
+        "is_completed": false
       },
       {
         "id": "todo-D06-5",
@@ -209,27 +139,17 @@
     "todos": [
       {
         "id": "todo-C07-1",
-        "task": "Gently detangle mats on lower back",
+        "task": "Detangle mats on lower back",
         "is_completed": false
       },
       {
         "id": "todo-C07-2",
-        "task": "Schedule professional grooming session",
+        "task": "Schedule grooming",
         "is_completed": true
-      },
-      {
-        "id": "todo-C07-3",
-        "task": "Give wet food treat as reward after brushing",
-        "is_completed": false
       },
       {
         "id": "todo-C07-4",
         "task": "Clean eye discharge",
-        "is_completed": false
-      },
-      {
-        "id": "todo-C07-5",
-        "task": "Trim sanitary area",
         "is_completed": false
       }
     ]
@@ -239,38 +159,18 @@
     "todos": [
       {
         "id": "todo-D08-1",
-        "task": "Administer daily heart medication",
-        "is_completed": false
-      },
-      {
-        "id": "todo-D08-2",
-        "task": "Ensure kennel environment remains calm",
-        "is_completed": true
-      },
-      {
-        "id": "todo-D08-3",
-        "task": "Prepare soft food mix for dinner",
+        "task": "Give heart medication",
         "is_completed": false
       },
       {
         "id": "todo-D08-4",
-        "task": "Gentle cuddle session in the play yard",
+        "task": "Cuddle session - 10 min",
         "is_completed": true
       },
       {
         "id": "todo-D08-5",
         "task": "Book follow-up with cardiologist",
-        "is_completed": false
-      },
-      {
-        "id": "151d61fb-560a-420b-9827-be115ce6399e",
-        "task": "Ensure regular exercise for the dog.",
-        "is_completed": false
-      },
-      {
-        "id": "6623ddc9-8acd-4669-a6f3-73e77a37578a",
-        "task": "Schedule regular health checks.",
-        "is_completed": false
+        "is_completed": true
       }
     ]
   },
