@@ -56,7 +56,6 @@ export interface ExtractedData {
   active_alerts: string[]
   action_items: string[]
 }
-}
 
 export interface HistoryEntry {
   entry_id: string
