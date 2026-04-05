@@ -56,8 +56,8 @@ export default function Dashboard() {
             <div className="absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-green-300/20 blur-2xl" />
           </div>
 
-          <div className="grid grid-cols-2 items-center gap-8">
-            <div className="pl-8">
+          <div className="flex items-center justify-between gap-12 px-6">
+            <div className="flex-1">
               <p className="text-sm font-semibold uppercase tracking-widest text-primary">Voice Handoff for Animal Shelters</p>
               <h1 className="mt-2 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
                 Hi, Sarah!
@@ -82,15 +82,15 @@ export default function Dashboard() {
               </div>
             </div>
 
-            <div className="flex flex-col items-center justify-center">
+            <div className="flex shrink-0 flex-col items-center justify-center">
               <button
                 onClick={() => setSelectAnimalOpen(true)}
-                className="group relative flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 via-green-500 to-teal-600 shadow-lg shadow-green-500/30 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-green-500/40 active:scale-95 sm:h-40 sm:w-40"
+                className="group relative flex h-36 w-36 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 via-green-500 to-teal-600 shadow-lg shadow-green-500/30 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-green-500/40 active:scale-95"
               >
                 <div className="absolute inset-1 rounded-full bg-gradient-to-br from-emerald-400 via-green-500 to-teal-600 opacity-50 blur-sm" />
                 <div className="relative flex flex-col items-center gap-2 text-white">
-                  <Mic className="h-10 w-10 sm:h-12 sm:w-12" />
-                  <span className="text-sm font-semibold sm:text-base">Record</span>
+                  <Mic className="h-12 w-12" />
+                  <span className="text-sm font-semibold">Record</span>
                 </div>
               </button>
               <p className="mt-4 text-center text-sm text-muted-foreground">
@@ -157,16 +157,16 @@ export default function Dashboard() {
       <Dialog open={selectAnimalOpen} onOpenChange={setSelectAnimalOpen}>
         <DialogContent className="!max-w-2xl">
           <DialogHeader>
-            <DialogTitle>Select an animal to check in</DialogTitle>
+            <DialogTitle>Select an animal to log care notes for</DialogTitle>
           </DialogHeader>
           <div className="grid gap-3 sm:grid-cols-2 max-h-[60vh] overflow-y-auto py-4">
             {animals.map((animal) => (
               <button
                 key={animal.id}
                 onClick={() => handleSelectAnimal(animal)}
-                className="flex items-center gap-4 rounded-lg border border-border bg-card p-4 text-left transition-all hover:border-primary hover:bg-accent"
+                className="flex items-center gap-4 rounded-lg border border-border bg-card p-4 text-left transition-all hover:border-emerald-500 hover:bg-emerald-50/60 dark:hover:bg-emerald-950/30"
               >
-                <div className="h-14 w-14 overflow-hidden rounded-full border-2 border-border flex items-center justify-center bg-muted text-2xl">
+                <div className="h-14 w-14 overflow-hidden rounded-full border-2 border-border flex items-center justify-center bg-muted text-2xl shrink-0">
                   {animal.photoUrl ? (
                     <Image
                       src={animal.photoUrl}
@@ -180,9 +180,12 @@ export default function Dashboard() {
                   )}
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">{animal.name}</p>
+                  <div className="flex items-baseline gap-2">
+                    <p className="font-semibold text-foreground">{animal.name}</p>
+                    <p className="text-xs text-muted-foreground">{animal.estimatedAge}</p>
+                  </div>
                   <p className="text-sm text-muted-foreground">
-                    {animal.species} &middot; Cage {animal.cage}
+                    {animal.breed} &middot; Cage {animal.cage}
                   </p>
                 </div>
               </button>
@@ -197,6 +200,8 @@ export default function Dashboard() {
           onOpenChange={setRecordModalOpen}
           animalId={selectedAnimal.id}
           animalName={selectedAnimal.name}
+          animalAge={selectedAnimal.estimatedAge}
+          animalBreed={selectedAnimal.breed}
           animalCage={selectedAnimal.cage}
         />
       )}
