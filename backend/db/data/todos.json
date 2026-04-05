@@ -178,29 +178,19 @@
     "animal_id": "B-01",
     "todos": [
       {
-        "id": "todo-B01-1",
-        "task": "Change cage floor paper",
-        "is_completed": false
-      },
-      {
         "id": "todo-B01-2",
         "task": "Refill seed and pellet mix",
-        "is_completed": true
-      },
-      {
-        "id": "todo-B01-3",
-        "task": "Provide a fresh apple slice",
         "is_completed": false
       },
       {
         "id": "todo-B01-4",
         "task": "Check cage door lock mechanism",
-        "is_completed": true
+        "is_completed": false
       },
       {
         "id": "todo-B01-5",
-        "task": "Mist with warm water for bathing",
-        "is_completed": false
+        "task": "Bathe",
+        "is_completed": true
       }
     ]
   },
@@ -208,38 +198,18 @@
     "animal_id": "C-09",
     "todos": [
       {
-        "id": "todo-C09-1",
-        "task": "Check right paw bandage",
-        "is_completed": false
-      },
-      {
         "id": "todo-C09-2",
         "task": "Apply antibiotic ointment to wound",
         "is_completed": false
       },
       {
         "id": "todo-C09-3",
-        "task": "Administer pain medication",
+        "task": "Give pain medication",
         "is_completed": true
       },
       {
         "id": "todo-C09-4",
-        "task": "Change litter to dust-free paper pellets",
-        "is_completed": true
-      },
-      {
-        "id": "todo-C09-5",
-        "task": "Monitor for any signs of limping",
-        "is_completed": false
-      },
-      {
-        "id": "07a3ce20-0bd4-4b5f-80aa-1de343ef4125",
-        "task": "Monitor eating habits, litter box use, and activity level.",
-        "is_completed": false
-      },
-      {
-        "id": "0635b904-a426-46ef-84d5-d772245ad56f",
-        "task": "Regular grooming and checking for any skin or coat issues.",
+        "task": "Monitor for signs of infection",
         "is_completed": false
       }
     ]
