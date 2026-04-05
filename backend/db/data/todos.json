@@ -106,6 +106,16 @@
         "id": "todo-R01-5",
         "task": "Deep clean litter box",
         "is_completed": true
+      },
+      {
+        "id": "dd9383f6-1915-4f8e-b4d8-efcfafddade3",
+        "task": "monitor bunny's diet closely for the next shift",
+        "is_completed": false
+      },
+      {
+        "id": "5a1fe3d2-edfc-43af-beb9-c61965c1946b",
+        "task": "ensure bunny finishes her meal before giving any snacks",
+        "is_completed": false
       }
     ]
   },

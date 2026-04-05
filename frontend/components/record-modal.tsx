@@ -148,6 +148,8 @@ export function RecordModal({
     if (animalId && rawExtracted) {
       try {
         await saveCheckIn(animalId, transcript, rawExtracted)
+        // Refresh the page automatically after successfully saving
+        window.location.reload()
       } catch {
         console.error("Failed to persist check-in to backend")
       }
