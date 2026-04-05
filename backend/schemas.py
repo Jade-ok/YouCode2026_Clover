@@ -37,6 +37,7 @@ class AnimalProfile(BaseModel):
 
 
 class PermanentData(BaseModel):
+    intake_date: str
     chronic_conditions: List[str] = []
     cautions: List[str] = []
 

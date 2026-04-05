@@ -8,9 +8,10 @@
       "gender": "Female",
       "age": "3 years",
       "cage_location": "Kennel A-12",
-      "photo": "https://placedog.net/300/300?id=1"
+      "photo": "/static/images/d-01.jpg"
     },
     "permanent_data": {
+      "intake_date": "2026-03-20",
       "chronic_conditions": ["Mild hip dysplasia"],
       "cautions": ["Food aggressive with other dogs"]
     }
@@ -24,9 +25,10 @@
       "gender": "Female",
       "age": "6 months",
       "cage_location": "Cattery B-05",
-      "photo": "https://placekitten.com/300/300"
+      "photo": "/static/images/c-03.jpg"
     },
     "permanent_data": {
+      "intake_date": "2026-03-25",
       "chronic_conditions": [],
       "cautions": ["Slightly skittish towards tall men"]
     }
@@ -40,9 +42,10 @@
       "gender": "Male",
       "age": "2 years",
       "cage_location": "Small Animal Room 2",
-      "photo": null
+      "photo": "/static/images/r-01.jpg"
     },
     "permanent_data": {
+      "intake_date": "2026-03-28",
       "chronic_conditions": ["Prone to ear mites"],
       "cautions": ["Fragile spine - handle with care"]
     }
@@ -56,9 +59,10 @@
       "gender": "Male",
       "age": "5 years",
       "cage_location": "Kennel B-02",
-      "photo": "https://placedog.net/300/300?id=3"
+      "photo": "/static/images/d-04.jpg"
     },
     "permanent_data": {
+      "intake_date": "2026-04-01",
       "chronic_conditions": ["Mild arthritis"],
       "cautions": ["Requires gentle exercise"]
     }
@@ -72,9 +76,10 @@
       "gender": "Female",
       "age": "4 years",
       "cage_location": "Cattery A-01",
-      "photo": "https://placekitten.com/301/300"
+      "photo": "/static/images/c-05.jpg"
     },
     "permanent_data": {
+      "intake_date": "2026-04-02",
       "chronic_conditions": [],
       "cautions": ["Very vocal, tends to easily slip out of cages"]
     }
@@ -88,9 +93,10 @@
       "gender": "Male",
       "age": "3 years",
       "cage_location": "Kennel A-10",
-      "photo": "https://placedog.net/300/300?id=4"
+      "photo": "/static/images/d-06.jpg"
     },
     "permanent_data": {
+      "intake_date": "2026-04-03",
       "chronic_conditions": ["Skin fold irritation"],
       "cautions": ["Prone to overheating in warm weather"]
     }
@@ -104,9 +110,10 @@
       "gender": "Male",
       "age": "1.5 years",
       "cage_location": "Cattery C-04",
-      "photo": "https://placekitten.com/302/300"
+      "photo": "/static/images/c-07.jpg"
     },
     "permanent_data": {
+      "intake_date": "2026-04-04",
       "chronic_conditions": [],
       "cautions": ["Do not pull on matted fur during grooming"]
     }
@@ -120,9 +127,10 @@
       "gender": "Female",
       "age": "7 years",
       "cage_location": "Kennel C-01",
-      "photo": "https://placedog.net/300/300?id=5"
+      "photo": "/static/images/d-08.jpg"
     },
     "permanent_data": {
+      "intake_date": "2026-04-04",
       "chronic_conditions": ["Heart murmur"],
       "cautions": ["Avoid high stress situations"]
     }
@@ -136,9 +144,10 @@
       "gender": "Male",
       "age": "1 year",
       "cage_location": "Bird Room 1",
-      "photo": null
+      "photo": "/static/images/b-01.jpg"
     },
     "permanent_data": {
+      "intake_date": "2026-04-05",
       "chronic_conditions": [],
       "cautions": ["Flight risk - strictly keep doors closed"]
     }
@@ -152,9 +161,10 @@
       "gender": "Male",
       "age": "2 years",
       "cage_location": "Cattery B-02",
-      "photo": null
+      "photo": "/static/images/c-09.jpg"
     },
     "permanent_data": {
+      "intake_date": "2026-03-15",
       "chronic_conditions": ["Recovering from right paw wound"],
       "cautions": ["Skittish - approach slowly, no sudden movements"]
     }
