@@ -56,14 +56,6 @@ export interface ExtractedData {
   active_alerts: string[]
   action_items: string[]
 }
-
-export interface TemporaryEntry {
-  entry_id: string
-  animal_id: string
-  timestamp: string
-  recorded_by: string
-  transcript: string
-  extracted_data: ExtractedData
 }
 
 export interface HistoryEntry {
@@ -133,17 +125,16 @@ export async function saveCheckIn(
   animalId: string,
   transcript: string,
   extractedData: ExtractedData,
-  recordedBy = "Volunteer"
+  recordedBy = "Volunteer Elly"
 ): Promise<void> {
   const payload = {
     entry_id: `entry-${Date.now()}`,
-    animal_id: animalId,
     timestamp: new Date().toISOString(),
     recorded_by: recordedBy,
     transcript,
     extracted_data: extractedData,
   }
-  const res = await fetch(`${API_BASE}/api/animals/${animalId}/update`, {
+  const res = await fetch(`${API_BASE}/api/animals/${animalId}/confirm`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),

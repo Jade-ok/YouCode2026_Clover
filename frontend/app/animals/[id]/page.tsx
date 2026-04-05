@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { useParams, notFound } from "next/navigation"
 import Link from "next/link"
+import Image from "next/image"
 import { Navigation } from "@/components/navigation"
 import { RecordModal } from "@/components/record-modal"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -102,8 +103,19 @@ export default function AnimalCasePage() {
         {/* Animal Header */}
         <div className="mb-8 flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
           <div className="flex items-start gap-4">
-            <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-secondary text-5xl">
-              {animal!.photoPlaceholder}
+            <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-2xl bg-secondary">
+              {animal!.photoUrl ? (
+                <Image
+                  src={animal!.photoUrl}
+                  alt={animal!.name}
+                  fill
+                  className="object-cover"
+                />
+              ) : (
+                <div className="flex h-full w-full items-center justify-center text-4xl">
+                  {animal!.photoPlaceholder}
+                </div>
+              )}
             </div>
             <div>
               <h1 className="text-3xl font-bold text-foreground">{animal!.name}</h1>
@@ -120,15 +132,6 @@ export default function AnimalCasePage() {
                   {animal!.daysInShelter} days in shelter
                 </span>
               </div>
-              {animal!.chronicConditions.length > 0 && (
-                <div className="mt-2 flex flex-wrap gap-1.5">
-                  {animal!.chronicConditions.map((c) => (
-                    <Badge key={c} variant="secondary" className="text-xs">
-                      {c}
-                    </Badge>
-                  ))}
-                </div>
-              )}
             </div>
           </div>
 
@@ -138,7 +141,7 @@ export default function AnimalCasePage() {
             className="gap-2 shadow-lg shadow-primary/20"
           >
             <Mic className="h-5 w-5" />
-            Record Check-In
+            Record Care Log
           </Button>
         </div>
 
