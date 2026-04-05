@@ -46,6 +46,11 @@
         "id": "d2dae08e-ee9c-41dd-b399-1efd96eea5d0",
         "task": "Monitor the dog's diet during the next shift",
         "is_completed": false
+      },
+      {
+        "id": "80287688-5f31-4497-9cd6-447063d499ac",
+        "task": "Schedule vet checkup for the dog due to concerning symptoms.",
+        "is_completed": false
       }
     ]
   },
@@ -265,6 +270,16 @@
       {
         "id": "todo-D08-5",
         "task": "Book follow-up with cardiologist",
+        "is_completed": false
+      },
+      {
+        "id": "151d61fb-560a-420b-9827-be115ce6399e",
+        "task": "Ensure regular exercise for the dog.",
+        "is_completed": false
+      },
+      {
+        "id": "6623ddc9-8acd-4669-a6f3-73e77a37578a",
+        "task": "Schedule regular health checks.",
         "is_completed": false
       }
     ]
