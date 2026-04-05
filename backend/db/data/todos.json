@@ -26,6 +26,16 @@
         "id": "todo-D01-5",
         "task": "Monitor food aggression during feeding time",
         "is_completed": false
+      },
+      {
+        "id": "cde89042-9ef1-4a63-be26-891fa9f7016b",
+        "task": "Schedule x-ray for left hind leg",
+        "is_completed": false
+      },
+      {
+        "id": "9f9b806d-9476-4d6a-a241-26c2f890010c",
+        "task": "Monitor food aggression",
+        "is_completed": false
       }
     ]
   },

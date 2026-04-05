@@ -13,6 +13,11 @@ def read_animals() -> list:
         return json.load(f)
 
 
+def write_animals(data: list) -> None:
+    with open(ANIMALS_PATH, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+
+
 def read_todos() -> list:
     try:
         with open(TODOS_PATH, "r", encoding="utf-8") as f:

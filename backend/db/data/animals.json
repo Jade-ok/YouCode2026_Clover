@@ -12,8 +12,13 @@
     },
     "permanent_data": {
       "intake_date": "2026-03-20",
-      "chronic_conditions": ["Mild hip dysplasia"],
-      "cautions": ["Food aggressive with other dogs"]
+      "chronic_conditions": [
+        "Mild hip dysplasia"
+      ],
+      "cautions": [
+        "Food aggressive with other dogs",
+        "Growled while eating - handle with caution around food"
+      ]
     }
   },
   {
@@ -30,7 +35,9 @@
     "permanent_data": {
       "intake_date": "2026-03-25",
       "chronic_conditions": [],
-      "cautions": ["Slightly skittish towards tall men"]
+      "cautions": [
+        "Slightly skittish towards tall men"
+      ]
     }
   },
   {
@@ -46,8 +53,12 @@
     },
     "permanent_data": {
       "intake_date": "2026-03-28",
-      "chronic_conditions": ["Prone to ear mites"],
-      "cautions": ["Fragile spine - handle with care"]
+      "chronic_conditions": [
+        "Prone to ear mites"
+      ],
+      "cautions": [
+        "Fragile spine - handle with care"
+      ]
     }
   },
   {
@@ -63,8 +74,12 @@
     },
     "permanent_data": {
       "intake_date": "2026-04-01",
-      "chronic_conditions": ["Mild arthritis"],
-      "cautions": ["Requires gentle exercise"]
+      "chronic_conditions": [
+        "Mild arthritis"
+      ],
+      "cautions": [
+        "Requires gentle exercise"
+      ]
     }
   },
   {
@@ -81,7 +96,9 @@
     "permanent_data": {
       "intake_date": "2026-04-02",
       "chronic_conditions": [],
-      "cautions": ["Very vocal, tends to easily slip out of cages"]
+      "cautions": [
+        "Very vocal, tends to easily slip out of cages"
+      ]
     }
   },
   {
@@ -97,8 +114,12 @@
     },
     "permanent_data": {
       "intake_date": "2026-04-03",
-      "chronic_conditions": ["Skin fold irritation"],
-      "cautions": ["Prone to overheating in warm weather"]
+      "chronic_conditions": [
+        "Skin fold irritation"
+      ],
+      "cautions": [
+        "Prone to overheating in warm weather"
+      ]
     }
   },
   {
@@ -115,7 +136,9 @@
     "permanent_data": {
       "intake_date": "2026-04-04",
       "chronic_conditions": [],
-      "cautions": ["Do not pull on matted fur during grooming"]
+      "cautions": [
+        "Do not pull on matted fur during grooming"
+      ]
     }
   },
   {
@@ -131,8 +154,12 @@
     },
     "permanent_data": {
       "intake_date": "2026-04-04",
-      "chronic_conditions": ["Heart murmur"],
-      "cautions": ["Avoid high stress situations"]
+      "chronic_conditions": [
+        "Heart murmur"
+      ],
+      "cautions": [
+        "Avoid high stress situations"
+      ]
     }
   },
   {
@@ -149,7 +176,9 @@
     "permanent_data": {
       "intake_date": "2026-04-05",
       "chronic_conditions": [],
-      "cautions": ["Flight risk - strictly keep doors closed"]
+      "cautions": [
+        "Flight risk - strictly keep doors closed"
+      ]
     }
   },
   {
@@ -165,8 +194,12 @@
     },
     "permanent_data": {
       "intake_date": "2026-03-15",
-      "chronic_conditions": ["Recovering from right paw wound"],
-      "cautions": ["Skittish - approach slowly, no sudden movements"]
+      "chronic_conditions": [
+        "Recovering from right paw wound"
+      ],
+      "cautions": [
+        "Skittish - approach slowly, no sudden movements"
+      ]
     }
   }
 ]

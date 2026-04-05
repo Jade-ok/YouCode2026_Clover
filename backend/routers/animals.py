@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from typing import List
 import uuid
-from db.database import read_animals, read_history, write_history, read_todos, write_todos
+from db.database import read_animals, write_animals, read_history, write_history, read_todos, write_todos
 from schemas import AnimalDetailResponse, AnimalListResponse, ConfirmRequest
 from services.stt_service import transcribe_audio
 from services.llm_service import extract_data_with_ai
@@ -34,10 +34,19 @@ def get_animal(animal_id: str):
 @router.post("/{animal_id}/confirm")
 async def confirm_checkin(animal_id: str, payload: ConfirmRequest):
     animals = read_animals()
-    if not any(a["id"] == animal_id for a in animals):
+    animal = next((a for a in animals if a["id"] == animal_id), None)
+    
+    if not animal:
         raise HTTPException(status_code=404, detail="Animal not found")
 
-    # transcript → history
+    # 1. active_alerts → animals.json (permanent_data.cautions)에 추가
+    if payload.extracted_data.active_alerts:
+        for alert in payload.extracted_data.active_alerts:
+            if alert not in animal["permanent_data"]["cautions"]:
+                animal["permanent_data"]["cautions"].append(alert)
+        write_animals(animals)
+
+    # 2. transcript → history.json
     all_history = read_history()
     animal_history = next((h for h in all_history if h["animal_id"] == animal_id), None)
     new_entry = {
@@ -53,7 +62,7 @@ async def confirm_checkin(animal_id: str, payload: ConfirmRequest):
         all_history.append({"animal_id": animal_id, "history": [new_entry]})
     write_history(all_history)
 
-    # action_items → todos
+    # 3. action_items → todos.json
     all_todos = read_todos()
     animal_todos = next((t for t in all_todos if t["animal_id"] == animal_id), None)
     new_todos = [{"id": str(uuid.uuid4()), "task": task, "is_completed": False} for task in payload.extracted_data.action_items]
