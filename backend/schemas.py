@@ -8,9 +8,21 @@ class ExtractedData(BaseModel):
     action_items: List[str] = []
 
 
-class TemporaryDataEntry(BaseModel):
+class HistoryEntry(BaseModel):
     entry_id: str
-    animal_id: str
+    timestamp: str
+    recorded_by: str
+    transcript: str
+
+
+class Todo(BaseModel):
+    id: str
+    task: str
+    is_completed: bool = False
+
+
+class ConfirmRequest(BaseModel):
+    entry_id: str
     timestamp: str
     recorded_by: str
     transcript: str
@@ -44,24 +56,6 @@ class AnimalListResponse(BaseModel):
     profile: AnimalProfile
 
 
-class TimelineEntry(BaseModel):
-    entry_id: str
-    animal_id: str
-    timestamp: str
-    recorded_by: str
-    transcript: str
-    extracted_data: ExtractedData
-
-
-class ConfirmRequest(BaseModel):
-    entry_id: str
-    timestamp: str
-    recorded_by: str
-    transcript: str
-    extracted_data: ExtractedData
-
-
 class AnimalDetailResponse(Animal):
-    temporary_data: List[TemporaryDataEntry] = []
-    timeline: List[TimelineEntry] = []
-    latest_summary: Optional[ExtractedData] = None
+    history: List[HistoryEntry] = []
+    todos: List[Todo] = []
