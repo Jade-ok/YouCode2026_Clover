@@ -46,5 +46,117 @@
       "chronic_conditions": ["Prone to ear mites"],
       "cautions": ["Fragile spine - handle with care"]
     }
+  },
+  {
+    "id": "D-04",
+    "profile": {
+      "name": "Max",
+      "species": "Dog",
+      "breed": "German Shepherd",
+      "gender": "Male",
+      "age": "5 years",
+      "cage_location": "Kennel B-02",
+      "photo": "https://placedog.net/300/300?id=3"
+    },
+    "permanent_data": {
+      "chronic_conditions": ["Mild arthritis"],
+      "cautions": ["Requires gentle exercise"]
+    }
+  },
+  {
+    "id": "C-05",
+    "profile": {
+      "name": "Daisy",
+      "species": "Cat",
+      "breed": "Siamese",
+      "gender": "Female",
+      "age": "4 years",
+      "cage_location": "Cattery A-01",
+      "photo": "https://placekitten.com/301/300"
+    },
+    "permanent_data": {
+      "chronic_conditions": [],
+      "cautions": ["Very vocal, tends to easily slip out of cages"]
+    }
+  },
+  {
+    "id": "D-06",
+    "profile": {
+      "name": "Rocky",
+      "species": "Dog",
+      "breed": "English Bulldog",
+      "gender": "Male",
+      "age": "3 years",
+      "cage_location": "Kennel A-10",
+      "photo": "https://placedog.net/300/300?id=4"
+    },
+    "permanent_data": {
+      "chronic_conditions": ["Skin fold irritation"],
+      "cautions": ["Prone to overheating in warm weather"]
+    }
+  },
+  {
+    "id": "C-07",
+    "profile": {
+      "name": "Milo",
+      "species": "Cat",
+      "breed": "Maine Coon Mix",
+      "gender": "Male",
+      "age": "1.5 years",
+      "cage_location": "Cattery C-04",
+      "photo": "https://placekitten.com/302/300"
+    },
+    "permanent_data": {
+      "chronic_conditions": [],
+      "cautions": ["Do not pull on matted fur during grooming"]
+    }
+  },
+  {
+    "id": "D-08",
+    "profile": {
+      "name": "Coco",
+      "species": "Dog",
+      "breed": "Poodle Mix",
+      "gender": "Female",
+      "age": "7 years",
+      "cage_location": "Kennel C-01",
+      "photo": "https://placedog.net/300/300?id=5"
+    },
+    "permanent_data": {
+      "chronic_conditions": ["Heart murmur"],
+      "cautions": ["Avoid high stress situations"]
+    }
+  },
+  {
+    "id": "B-01",
+    "profile": {
+      "name": "Charlie",
+      "species": "Bird",
+      "breed": "Cockatiel",
+      "gender": "Male",
+      "age": "1 year",
+      "cage_location": "Bird Room 1",
+      "photo": null
+    },
+    "permanent_data": {
+      "chronic_conditions": [],
+      "cautions": ["Flight risk - strictly keep doors closed"]
+    }
+  },
+  {
+    "id": "C-09",
+    "profile": {
+      "name": "Marmalade",
+      "species": "Cat",
+      "breed": "Orange Tabby",
+      "gender": "Male",
+      "age": "2 years",
+      "cage_location": "Cattery B-02",
+      "photo": null
+    },
+    "permanent_data": {
+      "chronic_conditions": ["Recovering from right paw wound"],
+      "cautions": ["Skittish - approach slowly, no sudden movements"]
+    }
   }
 ]

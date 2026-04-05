@@ -1,13 +1,13 @@
 from fastapi import APIRouter, HTTPException
 from typing import List
 from db.database import read_animals, read_temporary_data, write_temporary_data
-from schemas import Animal, AnimalDetailResponse, TemporaryDataEntry
+from schemas import Animal, AnimalDetailResponse, TemporaryDataEntry, AnimalListResponse
 
 router = APIRouter(prefix="/api/animals", tags=["animals"])
 
-@router.get("", response_model=List[Animal])
+@router.get("", response_model=List[AnimalListResponse])
 def get_animals():
-    # BE-1.2: Fetch all animals (Profile + Permanent Data)
+    # BE-1.2: Fetch all animals (Profile only for list view)
     return read_animals()
 
 @router.get("/{animal_id}", response_model=AnimalDetailResponse)

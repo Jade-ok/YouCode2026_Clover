@@ -47,5 +47,10 @@ class Animal(BaseModel):
     permanent_data: PermanentData
 
 
+class AnimalListResponse(BaseModel):
+    id: str
+    profile: AnimalProfile
+
+
 class AnimalDetailResponse(Animal):
     temporary_data: List[TemporaryDataEntry] = []
