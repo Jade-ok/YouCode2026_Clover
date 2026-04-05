@@ -28,12 +28,8 @@ interface ExtractedItem {
 
 function mapExtractedData(data: ExtractedData): { alerts: ExtractedItem[]; tasks: ExtractedItem[] } {
   return {
-    alerts: [
-      ...(data.active_alerts || []).map((t) => ({ text: t })),
-    ],
-    tasks: [
-      ...(data.action_items || []).map((t) => ({ text: t })),
-    ],
+    alerts: (data.active_alerts ?? []).map((t) => ({ text: t })),
+    tasks: (data.action_items ?? []).map((t) => ({ text: t })),
   }
 }
 
@@ -131,6 +127,7 @@ export function RecordModal({
     const text = textOverride ?? transcript
     if (!text.trim()) return
 
+    setMicError(null)
     setIsGenerating(true)
     setIsEditing(false)
     setPhase("summary")
