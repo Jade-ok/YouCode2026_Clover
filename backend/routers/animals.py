@@ -39,14 +39,14 @@ async def confirm_checkin(animal_id: str, payload: ConfirmRequest):
     if not animal:
         raise HTTPException(status_code=404, detail="Animal not found")
 
-    # 1. active_alerts → animals.json (permanent_data.cautions)에 추가
+    # 1. Add active_alerts to animals.json (permanent_data.cautions)
     if payload.extracted_data.active_alerts:
         for alert in payload.extracted_data.active_alerts:
             if alert not in animal["permanent_data"]["cautions"]:
                 animal["permanent_data"]["cautions"].append(alert)
         write_animals(animals)
 
-    # 2. transcript → history.json
+    # 2. Append transcript to history.json
     all_history = read_history()
     animal_history = next((h for h in all_history if h["animal_id"] == animal_id), None)
     new_entry = {
@@ -62,7 +62,7 @@ async def confirm_checkin(animal_id: str, payload: ConfirmRequest):
         all_history.append({"animal_id": animal_id, "history": [new_entry]})
     write_history(all_history)
 
-    # 3. action_items → todos.json
+    # 3. Append action_items to todos.json
     all_todos = read_todos()
     animal_todos = next((t for t in all_todos if t["animal_id"] == animal_id), None)
     new_todos = [{"id": str(uuid.uuid4()), "task": task, "is_completed": False} for task in payload.extracted_data.action_items]
