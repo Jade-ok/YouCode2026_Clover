@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge"
 import { Mic, Square, Sparkles, AlertTriangle, CheckCircle2, ListTodo, Pencil, Loader2 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { analyzeAudio, analyzeText, saveCheckIn } from "@/lib/api"
-import type { ExtractedData, TemporaryEntry } from "@/lib/api"
+import type { ExtractedData } from "@/lib/api"
 
 interface RecordModalProps {
   open: boolean
@@ -17,7 +17,7 @@ interface RecordModalProps {
   animalId?: string
   animalName?: string
   animalCage?: string
-  onSave?: (data: { transcript: string; alerts: string[]; tasks: string[] }, rawEntry?: TemporaryEntry) => void
+  onSave?: (data: { transcript: string; alerts: string[]; tasks: string[] }, rawEntry?: any) => void
 }
 
 interface ExtractedItem {
@@ -27,14 +27,10 @@ interface ExtractedItem {
 function mapExtractedData(data: ExtractedData): { alerts: ExtractedItem[]; tasks: ExtractedItem[] } {
   return {
     alerts: [
-      ...data.health.map((t) => ({ text: t })),
-      ...data.cautions.map((t) => ({ text: t })),
-      ...data.behavior.map((t) => ({ text: t })),
-      ...(data.feeding ? [{ text: `Feeding — food: ${data.feeding.food}, water: ${data.feeding.water}` }] : []),
+      ...(data.active_alerts || []).map((t) => ({ text: t })),
     ],
     tasks: [
-      ...data.action_items.map((t) => ({ text: t })),
-      ...data.medications.map((t) => ({ text: `Medication: ${t}` })),
+      ...(data.action_items || []).map((t) => ({ text: t })),
     ],
   }
 }
@@ -156,7 +152,7 @@ export function RecordModal({
       }
     }
 
-    const rawEntry: TemporaryEntry | undefined =
+    const rawEntry =
       animalId && rawExtracted
         ? {
             entry_id: `entry-${Date.now()}`,
