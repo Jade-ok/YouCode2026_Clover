@@ -54,6 +54,7 @@ class Animal(BaseModel):
 class AnimalListResponse(BaseModel):
     id: str
     profile: AnimalProfile
+    permanent_data: PermanentData
 
 
 class AnimalDetailResponse(Animal):

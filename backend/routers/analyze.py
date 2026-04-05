@@ -1,4 +1,5 @@
 from fastapi import APIRouter, UploadFile, File, HTTPException
+from pydantic import BaseModel
 from services.stt_service import transcribe_audio
 from services.llm_service import extract_data_with_ai
 
