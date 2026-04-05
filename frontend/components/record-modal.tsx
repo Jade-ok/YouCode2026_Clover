@@ -26,16 +26,8 @@ interface ExtractedItem {
 
 function mapExtractedData(data: ExtractedData): { alerts: ExtractedItem[]; tasks: ExtractedItem[] } {
   return {
-    alerts: [
-      ...data.health.map((t) => ({ text: t })),
-      ...data.cautions.map((t) => ({ text: t })),
-      ...data.behavior.map((t) => ({ text: t })),
-      ...(data.feeding ? [{ text: `Feeding — food: ${data.feeding.food}, water: ${data.feeding.water}` }] : []),
-    ],
-    tasks: [
-      ...data.action_items.map((t) => ({ text: t })),
-      ...data.medications.map((t) => ({ text: `Medication: ${t}` })),
-    ],
+    alerts: (data.active_alerts ?? []).map((t) => ({ text: t })),
+    tasks: (data.action_items ?? []).map((t) => ({ text: t })),
   }
 }
 
@@ -131,6 +123,7 @@ export function RecordModal({
     const text = textOverride ?? transcript
     if (!text.trim()) return
 
+    setMicError(null)
     setIsGenerating(true)
     setIsEditing(false)
     setPhase("summary")

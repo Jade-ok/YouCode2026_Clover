@@ -53,12 +53,8 @@ export async function getAnimals(): Promise<Animal[]> {
 }
 
 export interface ExtractedData {
-  health: string[]
-  behavior: string[]
-  feeding: { food: string; water: string } | null
-  medications: string[]
+  active_alerts: string[]
   action_items: string[]
-  cautions: string[]
 }
 
 export interface TemporaryEntry {
