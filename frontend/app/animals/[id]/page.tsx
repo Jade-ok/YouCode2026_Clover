@@ -20,11 +20,10 @@ import {
   CheckCircle2,
   Circle,
   ListTodo,
-  RotateCcw,
   Loader2,
 } from "lucide-react"
 import { getAnimal } from "@/lib/api"
-import type { AnimalDetail, TemporaryEntry } from "@/lib/api"
+import type { AnimalDetail, HistoryEntry } from "@/lib/api"
 import { cn } from "@/lib/utils"
 
 function formatTimestamp(ts: string): { date: string; time: string } {
@@ -43,26 +42,19 @@ export default function AnimalCasePage() {
   const [loading, setLoading] = useState(true)
   const [notFoundError, setNotFoundError] = useState(false)
   const [recordModalOpen, setRecordModalOpen] = useState(false)
-
-  // Local state for newly saved check-ins this session
-  const [newEntries, setNewEntries] = useState<TemporaryEntry[]>([])
   const [tasks, setTasks] = useState<{ id: string; task: string; completed: boolean }[]>([])
 
   useEffect(() => {
     getAnimal(animalId)
       .then((data) => {
         setAnimal(data)
-        // Seed tasks from the most recent entry's action_items
-        const latest = data.temporaryData[0]
-        if (latest) {
-          setTasks(
-            latest.extracted_data.action_items.map((item, i) => ({
-              id: `task-${i}`,
-              task: item,
-              completed: false,
-            }))
-          )
-        }
+        setTasks(
+          data.todos.map((t) => ({
+            id: t.id,
+            task: t.task,
+            completed: t.is_completed,
+          }))
+        )
       })
       .catch(() => setNotFoundError(true))
       .finally(() => setLoading(false))
@@ -83,15 +75,7 @@ export default function AnimalCasePage() {
     notFound()
   }
 
-  // Alerts: permanent cautions + latest health observations
-  const latest = [...newEntries, ...(animal!.temporaryData ?? [])][0]
-  const alerts = [
-    ...(animal!.status ?? []),
-    ...(latest?.extracted_data.health ?? []),
-    ...(latest?.extracted_data.cautions ?? []),
-  ]
-
-  const allEntries = [...newEntries, ...(animal!.temporaryData ?? [])]
+  const alerts = [...(animal!.status ?? [])]
 
   const toggleTask = (id: string) => {
     setTasks((prev) => prev.map((t) => (t.id === id ? { ...t, completed: !t.completed } : t)))
@@ -101,16 +85,6 @@ export default function AnimalCasePage() {
     if (a.completed === b.completed) return 0
     return a.completed ? 1 : -1
   })
-
-  const handleSaveCheckIn = (data: { transcript: string; alerts: string[]; tasks: string[] }, rawEntry?: TemporaryEntry) => {
-    if (rawEntry) {
-      setNewEntries((prev) => [rawEntry, ...prev])
-      setTasks((prev) => [
-        ...data.tasks.map((task, i) => ({ id: `new-${Date.now()}-${i}`, task, completed: false })),
-        ...prev,
-      ])
-    }
-  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -158,30 +132,14 @@ export default function AnimalCasePage() {
             </div>
           </div>
 
-          <div className="flex gap-2">
-            {newEntries.length > 0 && (
-              <Button
-                onClick={() => {
-                  setNewEntries([])
-                  setTasks([])
-                }}
-                variant="outline"
-                size="lg"
-                className="gap-2"
-              >
-                <RotateCcw className="h-5 w-5" />
-                Reset
-              </Button>
-            )}
-            <Button
-              onClick={() => setRecordModalOpen(true)}
-              size="lg"
-              className="gap-2 shadow-lg shadow-primary/20"
-            >
-              <Mic className="h-5 w-5" />
-              Record Check-In
-            </Button>
-          </div>
+          <Button
+            onClick={() => setRecordModalOpen(true)}
+            size="lg"
+            className="gap-2 shadow-lg shadow-primary/20"
+          >
+            <Mic className="h-5 w-5" />
+            Record Check-In
+          </Button>
         </div>
 
         <div className="space-y-6">
@@ -261,7 +219,7 @@ export default function AnimalCasePage() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              {allEntries.length === 0 ? (
+              {animal!.history.length === 0 ? (
                 <p className="text-sm text-muted-foreground">No check-ins recorded yet.</p>
               ) : (
                 <div className="relative">
@@ -270,31 +228,18 @@ export default function AnimalCasePage() {
                     style={{ height: "calc(100% - 2rem)" }}
                   />
                   <div className="space-y-6">
-                    {allEntries.map((entry, idx) => {
+                    {animal!.history.map((entry: HistoryEntry) => {
                       const { date, time } = formatTimestamp(entry.timestamp)
-                      const isNew = newEntries.some((e) => e.entry_id === entry.entry_id)
                       return (
                         <div key={entry.entry_id} className="relative">
                           <div className="flex gap-4">
-                            <div
-                              className={cn(
-                                "relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full",
-                                isNew
-                                  ? "bg-primary text-primary-foreground"
-                                  : "bg-muted text-muted-foreground"
-                              )}
-                            >
+                            <div className="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground">
                               <Mic className="h-4 w-4" />
                             </div>
                             <div className="min-w-0 flex-1">
                               <div className="flex flex-wrap items-center gap-2 text-sm">
                                 <span className="font-medium text-foreground">{date}</span>
                                 <span className="text-muted-foreground">at {time}</span>
-                                {isNew && (
-                                  <Badge variant="outline" className="border-primary/30 bg-primary/10 text-primary">
-                                    New
-                                  </Badge>
-                                )}
                                 <span className="flex items-center gap-1 text-muted-foreground">
                                   <User className="h-3 w-3" />
                                   {entry.recorded_by}
@@ -324,7 +269,6 @@ export default function AnimalCasePage() {
         animalId={animalId}
         animalName={animal!.name}
         animalCage={animal!.cage}
-        onSave={handleSaveCheckIn}
       />
     </div>
   )
