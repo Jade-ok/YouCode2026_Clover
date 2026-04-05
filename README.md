@@ -38,3 +38,23 @@
    Open your browser and navigate to:
    * Health Check: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
    * API Docs (Swagger UI): [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+
+## Frontend Local Setup & Run Instructions
+
+1. **Navigate to the frontend directory:**
+   ```bash
+   cd frontend
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **View the application:**
+   Open your browser and navigate to: [http://localhost:3000](http://localhost:3000)
