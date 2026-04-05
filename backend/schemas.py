@@ -64,8 +64,10 @@ class TimelineEntry(BaseModel):
 
 class ConfirmRequest(BaseModel):
     entry_id: str
-    transcript: Optional[str] = None
-    extracted_data: Optional[ExtractedData] = None
+    timestamp: str
+    recorded_by: str
+    transcript: str
+    extracted_data: ExtractedData
 
 
 class AnimalDetailResponse(Animal):
