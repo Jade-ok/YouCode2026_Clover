@@ -5,6 +5,7 @@ DB_DIR = Path(__file__).parent / "data"
 DB_DIR.mkdir(parents=True, exist_ok=True)  # Auto-create the data folder if it doesn't exist
 ANIMALS_PATH = DB_DIR / "animals.json"
 TEMPORARY_DATA_PATH = DB_DIR / "temporary_data.json"
+TIMELINE_PATH = DB_DIR / "timeline.json"
 
 
 def read_animals() -> list:
@@ -22,4 +23,17 @@ def read_temporary_data() -> list:
 
 def write_temporary_data(data: list) -> None:
     with open(TEMPORARY_DATA_PATH, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+
+
+def read_timeline() -> list:
+    try:
+        with open(TIMELINE_PATH, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return []
+
+
+def write_timeline(data: list) -> None:
+    with open(TIMELINE_PATH, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
