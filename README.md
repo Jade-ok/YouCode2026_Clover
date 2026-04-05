@@ -70,7 +70,11 @@ Follow these steps to run CareHandoff locally.
    cd backend
    ```
 
-2. **Create and activate a virtual environment (Recommended):**
+2. **Create a `.env` file in the backend folder and add: `OPENAI_API_KEY=your_key_here`**
+
+
+
+3. **Create and activate a virtual environment (Recommended):**
    * **Windows (Command Prompt / PowerShell):**
      ```bash
      python -m venv venv
@@ -87,17 +91,17 @@ Follow these steps to run CareHandoff locally.
      source venv/bin/activate
      ```
 
-3. **Install dependencies:**
+4. **Install dependencies:**
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Run the FastAPI server:**
+5. **Run the FastAPI server:**
    ```bash
    uvicorn main:app --reload
    ```
 
-5. **Test the API:**
+6. **Test the API:**
    Open your browser and navigate to:
    * Health Check: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
    * API Docs (Swagger UI): [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
