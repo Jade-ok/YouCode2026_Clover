@@ -25,7 +25,12 @@ def get_animal(animal_id: str):
     timeline = read_timeline()
     animal_timeline = [t for t in timeline if t.get("animal_id") == animal_id]
 
-    return {**animal, "temporary_data": animal_temp_data, "timeline": animal_timeline}
+    latest_summary = None
+    if animal_timeline:
+        latest = max(animal_timeline, key=lambda e: e.get("timestamp", ""))
+        latest_summary = latest.get("extracted_data")
+
+    return {**animal, "temporary_data": animal_temp_data, "timeline": animal_timeline, "latest_summary": latest_summary}
 
 
 @router.post("/{animal_id}/confirm")

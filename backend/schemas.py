@@ -3,18 +3,9 @@ from pydantic import BaseModel
 from typing import List, Optional
 
 
-class FeedingData(BaseModel):
-    food: str
-    water: str
-
-
 class ExtractedData(BaseModel):
-    health: List[str] = []
-    behavior: List[str] = []
-    feeding: Optional[FeedingData] = None
-    medications: List[str] = []
+    active_alerts: List[str] = []
     action_items: List[str] = []
-    cautions: List[str] = []
 
 
 class TemporaryDataEntry(BaseModel):
@@ -73,3 +64,4 @@ class ConfirmRequest(BaseModel):
 class AnimalDetailResponse(Animal):
     temporary_data: List[TemporaryDataEntry] = []
     timeline: List[TimelineEntry] = []
+    latest_summary: Optional[ExtractedData] = None

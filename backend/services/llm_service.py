@@ -14,15 +14,11 @@ Given a voice transcript from a shelter volunteer, extract key care information 
 
 Return ONLY valid JSON with these exact fields:
 {
-  "health": ["list of health conditions or symptoms mentioned"],
-  "behavior": ["list of behavior observations"],
-  "feeding": {"food": "food intake description", "water": "water intake description"},
-  "medications": ["list of medications mentioned"],
-  "action_items": ["list of things that need to be done"],
-  "cautions": ["list of cautions or warnings"]
+  "active_alerts": ["urgent health issues, symptoms, behavioral warnings, or cautions that staff must be aware of"],
+  "action_items": ["specific tasks that need to be done for this animal"]
 }
 
-If a field has no relevant information, use an empty list [] or null for feeding.
+If a field has no relevant information, use an empty list [].
 Do not include any explanation or markdown — only the JSON object.
 """
 
