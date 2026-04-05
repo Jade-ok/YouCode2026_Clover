@@ -19,7 +19,7 @@ Return ONLY valid JSON with these exact fields:
 }
 
 active_alerts: Anything staff MUST know before interacting with or feeding this animal. Include:
-- Health issues, symptoms, injuries, or medical conditions
+- (Permanent/Chronic): Long-term or incurable health conditions (e.g., diabetes, chronic allergies)
 - Food restrictions, dietary limitations, or special diet requirements
 - Allergies (food, environmental, medication)
 - Behavioral warnings (aggression, anxiety, fear triggers)
@@ -28,6 +28,7 @@ active_alerts: Anything staff MUST know before interacting with or feeding this 
 - Abnormal or concerning measurements (e.g. "weight dropped to 3kg", "temperature is 40.5°C", "blood sugar is high")
 
 action_items: Specific tasks that need to be done. Include:
+- (Temporary/Actionable): Acute issues curable with brief treatment (e.g., minor wounds, ear mites), one-time tasks, vet checkups, and immediate medication needs. Formulate these as actionable tasks.
 - Feeding tasks (e.g. "feed only prescription diet", "give small meals 3x a day")
 - Medical tasks (e.g. "schedule vet checkup", "apply ointment to left ear")
 - Follow-up observations (e.g. "monitor stool", "watch for vomiting")
