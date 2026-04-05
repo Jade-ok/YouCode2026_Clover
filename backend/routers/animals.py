@@ -3,6 +3,8 @@ from typing import List
 import uuid
 from db.database import read_animals, read_history, write_history, read_todos, write_todos
 from schemas import AnimalDetailResponse, AnimalListResponse, ConfirmRequest
+from services.stt_service import transcribe_audio
+from services.llm_service import extract_data_with_ai
 
 router = APIRouter(prefix="/api/animals", tags=["animals"])
 
@@ -20,13 +22,13 @@ def get_animal(animal_id: str):
     if not animal:
         raise HTTPException(status_code=404, detail="Animal not found")
 
-    all_history = read_history()
-    animal_history = next((h["history"] for h in all_history if h["animal_id"] == animal_id), [])
+    todos_data = read_todos()
+    history_data = read_history()
 
-    all_todos = read_todos()
-    animal_todos = next((t["todos"] for t in all_todos if t["animal_id"] == animal_id), [])
+    animal_todos = next((t["todos"] for t in todos_data if t.get("animal_id") == animal_id), [])
+    animal_history = next((h["history"] for h in history_data if h.get("animal_id") == animal_id), [])
 
-    return {**animal, "history": animal_history, "todos": animal_todos}
+    return {**animal, "todos": animal_todos, "history": animal_history}
 
 
 @router.post("/{animal_id}/confirm")
@@ -44,6 +46,7 @@ async def confirm_checkin(animal_id: str, payload: ConfirmRequest):
         "recorded_by": payload.recorded_by,
         "transcript": payload.transcript,
     }
+
     if animal_history:
         animal_history["history"].append(new_entry)
     else:
