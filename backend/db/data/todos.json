@@ -1,0 +1,302 @@
+[
+  {
+    "animal_id": "D-01",
+    "todos": [
+      {
+        "id": "todo-D01-1",
+        "task": "Check hind legs in the afternoon",
+        "is_completed": false
+      },
+      {
+        "id": "todo-D01-2",
+        "task": "Schedule dental cleaning",
+        "is_completed": true
+      },
+      {
+        "id": "todo-D01-3",
+        "task": "Give joint supplement with dinner",
+        "is_completed": false
+      },
+      {
+        "id": "todo-D01-4",
+        "task": "Brush undercoat for 10 minutes",
+        "is_completed": true
+      },
+      {
+        "id": "todo-D01-5",
+        "task": "Monitor food aggression during feeding time",
+        "is_completed": false
+      }
+    ]
+  },
+  {
+    "animal_id": "C-03",
+    "todos": [
+      {
+        "id": "todo-C03-1",
+        "task": "Confirm spay surgery time for tomorrow",
+        "is_completed": true
+      },
+      {
+        "id": "todo-C03-2",
+        "task": "Trim front claws",
+        "is_completed": false
+      },
+      {
+        "id": "todo-C03-3",
+        "task": "Weigh and record in the log",
+        "is_completed": false
+      },
+      {
+        "id": "todo-C03-4",
+        "task": "Socialization time: 15 mins of wand play",
+        "is_completed": true
+      },
+      {
+        "id": "todo-C03-5",
+        "task": "Check ears for any signs of mites",
+        "is_completed": false
+      }
+    ]
+  },
+  {
+    "animal_id": "R-01",
+    "todos": [
+      {
+        "id": "todo-R01-1",
+        "task": "Apply ear mite drops",
+        "is_completed": false
+      },
+      {
+        "id": "todo-R01-2",
+        "task": "Refill Timothy hay rack",
+        "is_completed": true
+      },
+      {
+        "id": "todo-R01-3",
+        "task": "Provide fresh romaine lettuce",
+        "is_completed": false
+      },
+      {
+        "id": "todo-R01-4",
+        "task": "Check front teeth length",
+        "is_completed": false
+      },
+      {
+        "id": "todo-R01-5",
+        "task": "Deep clean litter box",
+        "is_completed": true
+      }
+    ]
+  },
+  {
+    "animal_id": "D-04",
+    "todos": [
+      {
+        "id": "todo-D04-1",
+        "task": "Administer arthritis pain medication",
+        "is_completed": false
+      },
+      {
+        "id": "todo-D04-2",
+        "task": "Short, slow walk (max 15 mins)",
+        "is_completed": true
+      },
+      {
+        "id": "todo-D04-3",
+        "task": "Brush thick shedding coat",
+        "is_completed": false
+      },
+      {
+        "id": "todo-D04-4",
+        "task": "Check ears for redness",
+        "is_completed": true
+      },
+      {
+        "id": "todo-D04-5",
+        "task": "Fill water bowl - he drinks a lot",
+        "is_completed": false
+      }
+    ]
+  },
+  {
+    "animal_id": "C-05",
+    "todos": [
+      {
+        "id": "todo-C05-1",
+        "task": "Double check cage latch is fully locked",
+        "is_completed": false
+      },
+      {
+        "id": "todo-C05-2",
+        "task": "Interactive play to reduce vocalization",
+        "is_completed": true
+      },
+      {
+        "id": "todo-C05-3",
+        "task": "Provide hairball remedy paste",
+        "is_completed": false
+      },
+      {
+        "id": "todo-C05-4",
+        "task": "Refresh water fountain",
+        "is_completed": false
+      },
+      {
+        "id": "todo-C05-5",
+        "task": "Check if she ate her dry kibble",
+        "is_completed": true
+      }
+    ]
+  },
+  {
+    "animal_id": "D-06",
+    "todos": [
+      {
+        "id": "todo-D06-1",
+        "task": "Clean facial wrinkles with wipes",
+        "is_completed": false
+      },
+      {
+        "id": "todo-D06-2",
+        "task": "Apply soothing balm to skin folds",
+        "is_completed": false
+      },
+      {
+        "id": "todo-D06-3",
+        "task": "Keep in air-conditioned room only",
+        "is_completed": true
+      },
+      {
+        "id": "todo-D06-4",
+        "task": "Short potty break in the shade",
+        "is_completed": true
+      },
+      {
+        "id": "todo-D06-5",
+        "task": "Wash and dry bedding",
+        "is_completed": false
+      }
+    ]
+  },
+  {
+    "animal_id": "C-07",
+    "todos": [
+      {
+        "id": "todo-C07-1",
+        "task": "Gently detangle mats on lower back",
+        "is_completed": false
+      },
+      {
+        "id": "todo-C07-2",
+        "task": "Schedule professional grooming session",
+        "is_completed": true
+      },
+      {
+        "id": "todo-C07-3",
+        "task": "Give wet food treat as reward after brushing",
+        "is_completed": false
+      },
+      {
+        "id": "todo-C07-4",
+        "task": "Clean eye discharge",
+        "is_completed": false
+      },
+      {
+        "id": "todo-C07-5",
+        "task": "Trim sanitary area",
+        "is_completed": false
+      }
+    ]
+  },
+  {
+    "animal_id": "D-08",
+    "todos": [
+      {
+        "id": "todo-D08-1",
+        "task": "Administer daily heart medication",
+        "is_completed": false
+      },
+      {
+        "id": "todo-D08-2",
+        "task": "Ensure kennel environment remains calm",
+        "is_completed": true
+      },
+      {
+        "id": "todo-D08-3",
+        "task": "Prepare soft food mix for dinner",
+        "is_completed": false
+      },
+      {
+        "id": "todo-D08-4",
+        "task": "Gentle cuddle session in the play yard",
+        "is_completed": true
+      },
+      {
+        "id": "todo-D08-5",
+        "task": "Book follow-up with cardiologist",
+        "is_completed": false
+      }
+    ]
+  },
+  {
+    "animal_id": "B-01",
+    "todos": [
+      {
+        "id": "todo-B01-1",
+        "task": "Change cage floor paper",
+        "is_completed": false
+      },
+      {
+        "id": "todo-B01-2",
+        "task": "Refill seed and pellet mix",
+        "is_completed": true
+      },
+      {
+        "id": "todo-B01-3",
+        "task": "Provide a fresh apple slice",
+        "is_completed": false
+      },
+      {
+        "id": "todo-B01-4",
+        "task": "Check cage door lock mechanism",
+        "is_completed": true
+      },
+      {
+        "id": "todo-B01-5",
+        "task": "Mist with warm water for bathing",
+        "is_completed": false
+      }
+    ]
+  },
+  {
+    "animal_id": "C-09",
+    "todos": [
+      {
+        "id": "todo-C09-1",
+        "task": "Check right paw bandage",
+        "is_completed": false
+      },
+      {
+        "id": "todo-C09-2",
+        "task": "Apply antibiotic ointment to wound",
+        "is_completed": false
+      },
+      {
+        "id": "todo-C09-3",
+        "task": "Administer pain medication",
+        "is_completed": true
+      },
+      {
+        "id": "todo-C09-4",
+        "task": "Change litter to dust-free paper pellets",
+        "is_completed": true
+      },
+      {
+        "id": "todo-C09-5",
+        "task": "Monitor for any signs of limping",
+        "is_completed": false
+      }
+    ]
+  }
+]
