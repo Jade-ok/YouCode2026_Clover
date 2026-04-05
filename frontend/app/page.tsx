@@ -48,18 +48,41 @@ export default function Dashboard() {
 
       <main className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         {/* Hero Section */}
-        <div className="mb-16 pt-8">
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-            <div className="lg:max-w-xl">
+        <div className="relative mb-4 rounded-3xl px-8 py-10">
+          {/* Background blobs */}
+          <div className="pointer-events-none absolute inset-0 rounded-3xl">
+            <div className="absolute -left-8 -top-8 h-64 w-64 rounded-full bg-emerald-400/25 blur-3xl" />
+            <div className="absolute -bottom-8 right-0 h-64 w-64 rounded-full bg-teal-400/25 blur-3xl" />
+            <div className="absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-green-300/20 blur-2xl" />
+          </div>
+
+          <div className="grid grid-cols-2 items-center gap-8">
+            <div className="pl-8">
+              <p className="text-sm font-semibold uppercase tracking-widest text-primary">Voice Handoff for Animal Shelters</p>
               <h1 className="mt-2 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
                 Hi, Sarah!
               </h1>
-              <p className="mt-6 text-lg text-muted-foreground">
-                Record your check-ins with voice. <br />Never lose critical care info between shifts again.
+              <p className="mt-4 text-lg text-muted-foreground">
+                Right after caring for an animal, speak your notes.<br />
+                The next volunteer instantly knows everything.
               </p>
+              <div className="mt-5 flex flex-wrap gap-3 text-sm text-muted-foreground">
+                <span className="flex items-center gap-1.5 rounded-full bg-muted px-3 py-1">
+                  <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                  Voice → AI summary
+                </span>
+                <span className="flex items-center gap-1.5 rounded-full bg-muted px-3 py-1">
+                  <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                  Alerts & to-dos auto-extracted
+                </span>
+                <span className="flex items-center gap-1.5 rounded-full bg-muted px-3 py-1">
+                  <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                  Full care history per animal
+                </span>
+              </div>
             </div>
 
-            <div className="flex flex-col items-center lg:items-end">
+            <div className="flex flex-col items-center justify-center">
               <button
                 onClick={() => setSelectAnimalOpen(true)}
                 className="group relative flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 via-green-500 to-teal-600 shadow-lg shadow-green-500/30 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-green-500/40 active:scale-95 sm:h-40 sm:w-40"
@@ -70,15 +93,15 @@ export default function Dashboard() {
                   <span className="text-sm font-semibold sm:text-base">Record</span>
                 </div>
               </button>
-              <p className="mt-4 text-center text-sm text-muted-foreground lg:text-right">
-                Tap to start a check-in
+              <p className="mt-4 text-center text-sm text-muted-foreground">
+                Tap to record your care log
               </p>
             </div>
           </div>
         </div>
 
         {/* Search Bar */}
-        <div className="mb-10 flex justify-center">
+        <div className="mb-4 flex justify-center">
           <div className="relative w-full max-w-lg">
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <Input
@@ -104,11 +127,11 @@ export default function Dashboard() {
           </div>
         ) : (
           <>
-            <div className="mb-4 text-sm text-muted-foreground text-center">
+            <div className="mb-3 text-sm text-muted-foreground text-center">
               Showing {filteredAnimals.length} of {animals.length} animals
             </div>
 
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 pt-4">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {filteredAnimals.map((animal) => (
                 <AnimalCard key={animal.id} animal={animal} />
               ))}
