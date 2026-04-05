@@ -28,7 +28,8 @@ def get_animal(animal_id: str):
     animal_todos = next((t["todos"] for t in todos_data if t.get("animal_id") == animal_id), [])
     animal_history = next((h["history"] for h in history_data if h.get("animal_id") == animal_id), [])
 
-    return {**animal, "todos": animal_todos, "history": animal_history}
+    # 가장 최근 데이터가 상단에 오도록 history 배열을 역순으로 뒤집어서 반환합니다.
+    return {**animal, "todos": animal_todos, "history": animal_history[::-1]}
 
 
 @router.post("/{animal_id}/confirm")
