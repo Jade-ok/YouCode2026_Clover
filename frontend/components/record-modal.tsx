@@ -16,6 +16,8 @@ interface RecordModalProps {
   onOpenChange: (open: boolean) => void
   animalId?: string
   animalName?: string
+  animalAge?: string
+  animalBreed?: string
   animalCage?: string
   onSave?: (data: { transcript: string; alerts: string[]; tasks: string[] }, rawEntry?: any) => void
 }
@@ -42,6 +44,8 @@ export function RecordModal({
   onOpenChange,
   animalId,
   animalName = "Animal",
+  animalAge = "",
+  animalBreed = "",
   animalCage = "",
   onSave,
 }: RecordModalProps) {
@@ -217,16 +221,17 @@ export function RecordModal({
         )}
       >
         <DialogHeader>
-          <DialogTitle className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-              <Mic className="h-5 w-5" />
+          <DialogTitle>
+            <div className="text-xl font-bold">
+              Record Care Log for{" "}
+              <span className="text-primary">{animalName}</span>
+              {animalAge && <span className="ml-1.5 text-base font-normal text-muted-foreground">{animalAge}</span>}
             </div>
-            <div>
-              <div className="text-xl">Record Check-In</div>
-              <div className="text-sm font-normal text-muted-foreground">
-                {animalName}{animalCage ? ` · Cage ${animalCage}` : ""}
+            {(animalBreed || animalCage) && (
+              <div className="mt-0.5 text-sm font-normal text-muted-foreground">
+                {[animalBreed, animalCage ? `Cage ${animalCage}` : ""].filter(Boolean).join(" · ")}
               </div>
-            </div>
+            )}
           </DialogTitle>
           <DialogDescription className="sr-only">
             Record a voice check-in for {animalName}.
@@ -408,7 +413,7 @@ export function RecordModal({
                       </Button>
                       <Button onClick={handleSave} className="gap-2">
                         <CheckCircle2 className="h-4 w-4" />
-                        Save Check-In
+                        Save Care Log
                       </Button>
                     </div>
                   )}
