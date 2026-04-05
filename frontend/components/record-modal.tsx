@@ -229,7 +229,7 @@ export function RecordModal({
             </div>
             {(animalBreed || animalCage) && (
               <div className="mt-0.5 text-sm font-normal text-muted-foreground">
-                {[animalBreed, animalCage ? `Cage ${animalCage}` : ""].filter(Boolean).join(" · ")}
+                {[animalBreed, animalCage ? `Location ${animalCage}` : ""].filter(Boolean).join(" · ")}
               </div>
             )}
           </DialogTitle>

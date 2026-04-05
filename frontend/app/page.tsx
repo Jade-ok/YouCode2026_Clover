@@ -185,7 +185,7 @@ export default function Dashboard() {
                     <p className="text-xs text-muted-foreground">{animal.estimatedAge}</p>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    {animal.breed} &middot; Cage {animal.cage}
+                    {animal.breed} &middot; Location {animal.cage}
                   </p>
                 </div>
               </button>

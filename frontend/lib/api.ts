@@ -13,8 +13,8 @@ function speciesEmoji(species: string): string {
 }
 
 function parseCage(location: string): string {
-  const match = location.match(/([A-Za-z]-\d+|\d+)/i)
-  return match ? match[0].toUpperCase() : location
+  // Return the full location name instead of cutting it with regex
+  return location
 }
 
 function calcDaysInShelter(intakeDate: string): number {

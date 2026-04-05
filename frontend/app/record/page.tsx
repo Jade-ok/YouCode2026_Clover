@@ -188,7 +188,7 @@ export default function RecordPage() {
                           <div className="text-left">
                             <div className="font-medium">{selectedAnimal.name}</div>
                             <div className="text-xs text-muted-foreground">
-                              Cage {selectedAnimal.cage} · {selectedAnimal.breed}
+                              Location {selectedAnimal.cage} · {selectedAnimal.breed}
                             </div>
                           </div>
                         </div>
@@ -209,7 +209,7 @@ export default function RecordPage() {
                         <div>
                           <div className="font-medium">{animal.name}</div>
                           <div className="text-xs text-muted-foreground">
-                            Cage {animal.cage} · {animal.breed}
+                            Location {animal.cage} · {animal.breed}
                           </div>
                         </div>
                       </DropdownMenuItem>
