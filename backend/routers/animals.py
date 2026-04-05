@@ -61,6 +61,6 @@ async def confirm_checkin(animal_id: str, payload: ConfirmRequest):
         animal_todos["todos"].extend(new_todos)
     else:
         all_todos.append({"animal_id": animal_id, "todos": new_todos})
+        
     write_todos(all_todos)
-
     return {"status": "success", "entry_id": payload.entry_id}
