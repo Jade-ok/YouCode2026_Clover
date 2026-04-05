@@ -129,7 +129,7 @@ export async function saveCheckIn(
   animalId: string,
   transcript: string,
   extractedData: ExtractedData,
-  recordedBy = "Volunteer Elly"
+  recordedBy = "Volunteer Sarah"
 ): Promise<void> {
   const payload = {
     entry_id: `entry-${Date.now()}`,
