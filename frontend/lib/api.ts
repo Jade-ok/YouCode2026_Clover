@@ -70,9 +70,23 @@ export interface TemporaryEntry {
   extracted_data: ExtractedData
 }
 
+export interface HistoryEntry {
+  entry_id: string
+  timestamp: string
+  recorded_by: string
+  transcript: string
+}
+
+export interface TodoEntry {
+  id: string
+  task: string
+  is_completed: boolean
+}
+
 export interface AnimalDetail extends Animal {
   chronicConditions: string[]
-  temporaryData: TemporaryEntry[]
+  history: HistoryEntry[]
+  todos: TodoEntry[]
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -80,7 +94,8 @@ function mapAnimalDetail(raw: any): AnimalDetail {
   return {
     ...mapAnimal(raw),
     chronicConditions: raw.permanent_data.chronic_conditions ?? [],
-    temporaryData: raw.temporary_data ?? [],
+    history: raw.history ?? [],
+    todos: raw.todos ?? [],
   }
 }
 
