@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge"
 import { Mic, Square, Sparkles, AlertTriangle, CheckCircle2, ListTodo, Pencil, Loader2 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { analyzeAudio, analyzeText, saveCheckIn } from "@/lib/api"
-import type { ExtractedData } from "@/lib/api"
+import type { ExtractedData, ExtractedItem as ExtractedItemType } from "@/lib/api"
 
 interface RecordModalProps {
   open: boolean
@@ -24,13 +24,27 @@ interface RecordModalProps {
 
 interface ExtractedItem {
   text: string
+  source: string
 }
 
 function mapExtractedData(data: ExtractedData): { alerts: ExtractedItem[]; tasks: ExtractedItem[] } {
   return {
-    alerts: (data.active_alerts ?? []).map((t) => ({ text: t })),
-    tasks: (data.action_items ?? []).map((t) => ({ text: t })),
+    alerts: (data.active_alerts ?? []).map((item) => ({ text: item.text, source: item.source ?? "" })),
+    tasks: (data.action_items ?? []).map((item) => ({ text: item.text, source: item.source ?? "" })),
   }
+}
+
+function highlightTranscript(text: string, source: string | null): React.ReactNode {
+  if (!source || !source.trim()) return <>{text}</>
+  const idx = text.toLowerCase().indexOf(source.toLowerCase())
+  if (idx === -1) return <>{text}</>
+  return (
+    <>
+      {text.slice(0, idx)}
+      <mark className="bg-green-200 text-green-900 rounded px-0.5 transition-colors">{text.slice(idx, idx + source.length)}</mark>
+      {text.slice(idx + source.length)}
+    </>
+  )
 }
 
 type Phase = "record" | "summary"
@@ -55,6 +69,7 @@ export function RecordModal({
   const [extractedData, setExtractedData] = useState<{ alerts: ExtractedItem[]; tasks: ExtractedItem[] }>({ alerts: [], tasks: [] })
   const [rawExtracted, setRawExtracted] = useState<ExtractedData | null>(null)
   const [micError, setMicError] = useState<string | null>(null)
+  const [hoveredSource, setHoveredSource] = useState<string | null>(null)
 
   const mediaRecorderRef = useRef<MediaRecorder | null>(null)
   const audioChunksRef = useRef<Blob[]>([])
@@ -201,6 +216,7 @@ export function RecordModal({
     setExtractedData({ alerts: [], tasks: [] })
     setRawExtracted(null)
     setMicError(null)
+    setHoveredSource(null)
     audioChunksRef.current = []
     mediaRecorderRef.current = null
   }
@@ -333,7 +349,9 @@ export function RecordModal({
                           />
                         ) : (
                           <p className="min-h-[150px] text-sm leading-relaxed text-foreground">
-                            {transcript || <span className="text-muted-foreground italic">No transcript available.</span>}
+                            {transcript
+                              ? highlightTranscript(transcript, hoveredSource)
+                              : <span className="text-muted-foreground italic">No transcript available.</span>}
                           </p>
                         )}
                       </CardContent>
@@ -359,7 +377,12 @@ export function RecordModal({
                           <ul className="mt-2 space-y-2">
                             {extractedData.alerts.length > 0 ? (
                               extractedData.alerts.map((alert, idx) => (
-                                <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                <li
+                                  key={idx}
+                                  className="flex items-start gap-2 text-sm text-muted-foreground cursor-default rounded px-1 -mx-1 hover:bg-green-50 transition-colors"
+                                  onMouseEnter={() => setHoveredSource(alert.source)}
+                                  onMouseLeave={() => setHoveredSource(null)}
+                                >
                                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-warning" />
                                   {alert.text}
                                 </li>
@@ -378,7 +401,12 @@ export function RecordModal({
                           <ul className="mt-2 space-y-2">
                             {extractedData.tasks.length > 0 ? (
                               extractedData.tasks.map((task, idx) => (
-                                <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                <li
+                                  key={idx}
+                                  className="flex items-start gap-2 text-sm text-muted-foreground cursor-default rounded px-1 -mx-1 hover:bg-green-50 transition-colors"
+                                  onMouseEnter={() => setHoveredSource(task.source)}
+                                  onMouseLeave={() => setHoveredSource(null)}
+                                >
                                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                                   {task.text}
                                 </li>

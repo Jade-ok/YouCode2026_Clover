@@ -11,11 +11,10 @@ async def transcribe_audio(audio_file) -> dict:
     try:
         content = await audio_file.read()
         file_tuple = (audio_file.filename or "audio.m4a", content, audio_file.content_type)
-        response = client.audio.transcriptions.create(
+        response = client.audio.translations.create(
             model="whisper-1",
             file=file_tuple,
             response_format="verbose_json",
-            language="en",
         )
         return {
             "transcript": response.text,

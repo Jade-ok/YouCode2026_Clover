@@ -3,9 +3,14 @@ from pydantic import BaseModel
 from typing import List, Optional
 
 
+class ExtractedItem(BaseModel):
+    text: str
+    source: str = ""
+
+
 class ExtractedData(BaseModel):
-    active_alerts: List[str] = []
-    action_items: List[str] = []
+    active_alerts: List[ExtractedItem] = []
+    action_items: List[ExtractedItem] = []
 
 
 class HistoryEntry(BaseModel):

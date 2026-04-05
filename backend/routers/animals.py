@@ -43,8 +43,8 @@ async def confirm_checkin(animal_id: str, payload: ConfirmRequest):
     # 1. Add active_alerts to animals.json (permanent_data.cautions)
     if payload.extracted_data.active_alerts:
         for alert in payload.extracted_data.active_alerts:
-            if alert not in animal["permanent_data"]["cautions"]:
-                animal["permanent_data"]["cautions"].append(alert)
+            if alert.text not in animal["permanent_data"]["cautions"]:
+                animal["permanent_data"]["cautions"].append(alert.text)
         write_animals(animals)
 
     # 2. Append transcript to history.json
@@ -66,7 +66,7 @@ async def confirm_checkin(animal_id: str, payload: ConfirmRequest):
     # 3. Append action_items to todos.json
     all_todos = read_todos()
     animal_todos = next((t for t in all_todos if t["animal_id"] == animal_id), None)
-    new_todos = [{"id": str(uuid.uuid4()), "task": task, "is_completed": False} for task in payload.extracted_data.action_items]
+    new_todos = [{"id": str(uuid.uuid4()), "task": task.text, "is_completed": False} for task in payload.extracted_data.action_items]
     if animal_todos:
         animal_todos["todos"].extend(new_todos)
     else:
