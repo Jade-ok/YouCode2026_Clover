@@ -46,6 +46,11 @@
         "id": "d2dae08e-ee9c-41dd-b399-1efd96eea5d0",
         "task": "Monitor the dog's diet during the next shift",
         "is_completed": false
+      },
+      {
+        "id": "80287688-5f31-4497-9cd6-447063d499ac",
+        "task": "Schedule vet checkup for the dog due to concerning symptoms.",
+        "is_completed": false
       }
     ]
   },
@@ -266,6 +271,16 @@
         "id": "todo-D08-5",
         "task": "Book follow-up with cardiologist",
         "is_completed": false
+      },
+      {
+        "id": "151d61fb-560a-420b-9827-be115ce6399e",
+        "task": "Ensure regular exercise for the dog.",
+        "is_completed": false
+      },
+      {
+        "id": "6623ddc9-8acd-4669-a6f3-73e77a37578a",
+        "task": "Schedule regular health checks.",
+        "is_completed": false
       }
     ]
   },
@@ -325,6 +340,16 @@
       {
         "id": "todo-C09-5",
         "task": "Monitor for any signs of limping",
+        "is_completed": false
+      },
+      {
+        "id": "07a3ce20-0bd4-4b5f-80aa-1de343ef4125",
+        "task": "Monitor eating habits, litter box use, and activity level.",
+        "is_completed": false
+      },
+      {
+        "id": "0635b904-a426-46ef-84d5-d772245ad56f",
+        "task": "Regular grooming and checking for any skin or coat issues.",
         "is_completed": false
       }
     ]

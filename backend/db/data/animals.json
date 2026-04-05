@@ -18,6 +18,9 @@
       "cautions": [
         "Food aggressive with other dogs",
         "Growled while eating - handle with caution around food",
+        "Dog is showing signs of low energy and lethargy.",
+        "Dog is not eating as much as before and occasionally refuses food.",
+        "Dog appears to be in discomfort, especially when moving and standing up.",
         "Bella did not drink water at all today."
       ]
     }
@@ -159,7 +162,9 @@
         "Heart murmur"
       ],
       "cautions": [
-        "Avoid high stress situations"
+        "Avoid high stress situations",
+        "Dog may show signs of anxiety if left alone for longer periods.",
+        "Socialization with other dogs should be introduced gradually."
       ]
     }
   },
@@ -199,7 +204,8 @@
         "Recovering from right paw wound"
       ],
       "cautions": [
-        "Skittish - approach slowly, no sudden movements"
+        "Skittish - approach slowly, no sudden movements",
+        "The cat may be sensitive to sudden change, so calm and stable environment is important."
       ]
     }
   }
