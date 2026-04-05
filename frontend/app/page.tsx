@@ -57,15 +57,14 @@ export default function Dashboard() {
           </div>
 
           <div className="flex items-center justify-between gap-12 px-6">
-            <div className="flex-1">
-              <p className="text-sm font-semibold uppercase tracking-widest text-primary">Voice Handoff for Animal Shelters</p>
-              <h1 className="mt-2 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-                Hi, Sarah!
-              </h1>
-              <p className="mt-4 text-lg text-muted-foreground">
-                Right after caring for an animal, speak your notes.<br />
-                The next volunteer instantly knows everything.
+            <div className="max-w-xl">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">
+                Voice Handoff for Animal Shelters
               </p>
+              <h1 className="mt-3 text-4xl font-bold tracking-tight text-foreground sm:text-5xl leading-[1.2]">
+                Hi, Sarah!<br />
+                <span className="text-primary">Speak</span> your care notes.
+              </h1>
               <div className="mt-5 flex flex-wrap gap-3 text-sm text-muted-foreground">
                 <span className="flex items-center gap-1.5 rounded-full bg-muted px-3 py-1">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />
@@ -87,6 +86,8 @@ export default function Dashboard() {
                 onClick={() => setSelectAnimalOpen(true)}
                 className="group relative flex h-36 w-36 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 via-green-500 to-teal-600 shadow-lg shadow-green-500/30 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-green-500/40 active:scale-95"
               >
+                <span className="absolute inset-0 rounded-full bg-gradient-to-br from-emerald-400 via-green-500 to-teal-600 animate-ping opacity-30" />
+                <span className="absolute -inset-3 rounded-full bg-green-500/20 animate-ping opacity-20 [animation-delay:0.3s]" />
                 <div className="absolute inset-1 rounded-full bg-gradient-to-br from-emerald-400 via-green-500 to-teal-600 opacity-50 blur-sm" />
                 <div className="relative flex flex-col items-center gap-2 text-white">
                   <Mic className="h-12 w-12" />
@@ -99,7 +100,6 @@ export default function Dashboard() {
             </div>
           </div>
         </div>
-
         {/* Search Bar */}
         <div className="mb-4 flex justify-center">
           <div className="relative w-full max-w-lg">

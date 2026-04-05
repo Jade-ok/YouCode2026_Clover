@@ -135,14 +135,19 @@ export default function AnimalCasePage() {
             </div>
           </div>
 
-          <Button
-            onClick={() => setRecordModalOpen(true)}
-            size="lg"
-            className="gap-2 shadow-lg shadow-primary/20"
-          >
-            <Mic className="h-5 w-5" />
-            Record Care Log
-          </Button>
+          <div className="flex flex-col items-center">
+            <button
+              onClick={() => setRecordModalOpen(true)}
+              className="group relative flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 via-green-500 to-teal-600 shadow-lg shadow-green-500/30 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-green-500/40 active:scale-95"
+            >
+              <div className="absolute inset-1 rounded-full bg-gradient-to-br from-emerald-400 via-green-500 to-teal-600 opacity-50 blur-sm" />
+              <div className="relative flex flex-col items-center gap-1.5 text-white">
+                <Mic className="h-8 w-8" />
+                <span className="text-xs font-semibold">Record</span>
+              </div>
+            </button>
+            <p className="mt-3 text-center text-sm text-muted-foreground">Tap to record your care log</p>
+          </div>
         </div>
 
         <div className="space-y-6">
