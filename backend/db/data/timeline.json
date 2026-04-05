@@ -6,15 +6,8 @@
     "recorded_by": "Volunteer Maria",
     "transcript": "Bella ate all her food but seemed a bit stiff in her back legs today.",
     "extracted_data": {
-      "health": ["Stiff back legs"],
-      "behavior": [],
-      "feeding": {
-        "food": "Ate all kibble",
-        "water": "Unknown"
-      },
-      "medications": [],
-      "action_items": ["Check hind legs in the afternoon"],
-      "cautions": []
+      "active_alerts": ["Stiff back legs"],
+      "action_items": ["Check hind legs in the afternoon"]
     }
   }
 ]
