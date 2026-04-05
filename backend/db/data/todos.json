@@ -36,6 +36,16 @@
         "id": "9f9b806d-9476-4d6a-a241-26c2f890010c",
         "task": "Monitor food aggression",
         "is_completed": false
+      },
+      {
+        "id": "1cb0da81-8d0b-47db-9e2f-27b6b1b53a3a",
+        "task": "Take the dog to the vet tomorrow at 6 p.m.",
+        "is_completed": false
+      },
+      {
+        "id": "d2dae08e-ee9c-41dd-b399-1efd96eea5d0",
+        "task": "Monitor the dog's diet during the next shift",
+        "is_completed": false
       }
     ]
   },
