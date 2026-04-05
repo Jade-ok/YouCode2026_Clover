@@ -27,7 +27,6 @@ active_alerts: Anything staff MUST know before interacting with or feeding this 
 - Behavioral warnings (aggression, anxiety, fear triggers)
 - Medication or treatment cautions
 - Any note that says the animal "cannot", "must not", "should not", or "is not allowed" something
-- Abnormal or concerning measurements (e.g. "weight dropped to 3kg", "temperature is 40.5°C", "blood sugar is high")
 
 action_items: Specific tasks that need to be done. Include:
 - (Temporary/Actionable): Acute issues curable with brief treatment (e.g., minor wounds, ear mites), one-time tasks, vet checkups, and immediate medication needs. Formulate these as actionable tasks.
@@ -35,12 +34,12 @@ action_items: Specific tasks that need to be done. Include:
 - Medical tasks (e.g. "schedule vet checkup", "apply ointment to left ear")
 - Follow-up observations (e.g. "monitor stool", "watch for vomiting")
 - Any to-do mentioned by the volunteer
-- Measurements that should be tracked or rechecked (e.g. "recheck weight next week", "monitor blood glucose daily") — include the specific value mentioned so the next volunteer has context
 
 If something involves both a restriction AND a task (e.g. "she's allergic to chicken, so only feed the green bag food"), put the restriction in active_alerts AND the task in action_items.
-If a measurement is mentioned (weight, temperature, blood glucose, heart rate, etc.), always record it. Put it in active_alerts if the value seems abnormal or worrying, and in action_items if it needs follow-up or monitoring.
+Always capture any numeric measurements or changes (e.g. "gained 3kg", "temperature was 40°C"). If the value is concerning or abnormal, put it in active_alerts. If it needs follow-up, put it in action_items. If both apply, put it in both — always include the specific value so the next volunteer has context.
 
 If a field has no relevant information, use an empty list [].
+Always respond in English, regardless of the language of the transcript.
 Do not include any explanation or markdown — only the JSON object.
 """
 
