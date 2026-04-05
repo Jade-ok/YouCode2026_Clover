@@ -124,7 +124,7 @@ export async function saveCheckIn(
   animalId: string,
   transcript: string,
   extractedData: ExtractedData,
-  recordedBy = "Volunteer"
+  recordedBy = "Volunteer Elly"
 ): Promise<void> {
   const payload = {
     entry_id: `entry-${Date.now()}`,
