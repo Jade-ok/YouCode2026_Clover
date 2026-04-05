@@ -285,21 +285,35 @@ export function RecordModal({
               </p>
 
               {isRecording && (
-                <Card className="w-full">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="flex items-center gap-2 text-base">
-                      <Mic className="h-4 w-4 text-muted-foreground" />
-                      Transcript
-                      <span className="ml-auto flex items-center gap-1.5">
-                        <span className="h-2 w-2 animate-pulse rounded-full bg-destructive" />
-                        <span className="text-xs font-normal text-muted-foreground">Live</span>
-                      </span>
+                <Card className="w-full border-primary/20 bg-primary/5">
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-sm font-medium text-muted-foreground">
+                      💬 Not sure what to say? Try this:
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="min-h-[60px] text-sm text-muted-foreground italic">
-                      Listening... transcript will appear after you stop.
-                    </p>
+                    <ul className="space-y-2.5 text-sm text-foreground">
+                      <li className="flex items-start gap-2.5">
+                        <span className="text-base leading-snug">🍽</span>
+                        <span>How did they eat and drink today?</span>
+                      </li>
+                      <li className="flex items-start gap-2.5">
+                        <span className="text-base leading-snug">🐾</span>
+                        <span>Any changes in behavior or mood?</span>
+                      </li>
+                      <li className="flex items-start gap-2.5">
+                        <span className="text-base leading-snug">💊</span>
+                        <span>Did they take their medication?</span>
+                      </li>
+                      <li className="flex items-start gap-2.5">
+                        <span className="text-base leading-snug">🏥</span>
+                        <span>Any physical concerns? (wounds, limping, discharge...)</span>
+                      </li>
+                      <li className="flex items-start gap-2.5">
+                        <span className="text-base leading-snug">📌</span>
+                        <span>Anything the next volunteer should know?</span>
+                      </li>
+                    </ul>
                   </CardContent>
                 </Card>
               )}
