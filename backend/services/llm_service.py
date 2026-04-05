@@ -14,9 +14,11 @@ Given a voice transcript from a shelter volunteer, extract key care information 
 
 Return ONLY valid JSON with these exact fields:
 {
-  "active_alerts": [...],
-  "action_items": [...]
+  "active_alerts": [{"text": "summarized alert", "source": "exact phrase copied from transcript"}],
+  "action_items": [{"text": "summarized task", "source": "exact phrase copied from transcript"}]
 }
+
+For "source": copy the exact phrase or sentence from the transcript that this item came from. This will be used to highlight the relevant part of the transcript.
 
 active_alerts: Anything staff MUST know before interacting with or feeding this animal. Include:
 - Health issues, symptoms, injuries, or medical conditions

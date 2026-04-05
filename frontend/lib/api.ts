@@ -52,9 +52,14 @@ export async function getAnimals(): Promise<Animal[]> {
   return data.map(mapAnimal)
 }
 
+export interface ExtractedItem {
+  text: string
+  source: string
+}
+
 export interface ExtractedData {
-  active_alerts: string[]
-  action_items: string[]
+  active_alerts: ExtractedItem[]
+  action_items: ExtractedItem[]
 }
 
 export interface HistoryEntry {
